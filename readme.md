@@ -1,4 +1,4 @@
-#Dockerized Django
+# Dockerized Django
 Well, kinda.  Docker-compose, with docker containers to be more exact.  This repo is my standard starting place for Django applications.  It includes the following:
 * Docker-compose with the latest Django and Postgres containers
 * Custom User model, where the username is an email address
@@ -6,7 +6,7 @@ Well, kinda.  Docker-compose, with docker containers to be more exact.  This rep
 * Google Analytics key embedded into a context processor, so it can be added as a variable in a template
 * python-dotenv to collect environment variables
 
-##Prerequisites
+## Prerequisites
 Docker needs to be installed on your machine
 
 ## Getting started
