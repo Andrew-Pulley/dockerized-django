@@ -1,0 +1,24 @@
+version: "3.7"
+
+services:
+  db:
+    environment:
+      - POSTGRES_HOST_AUTH_METHOD=trust
+    image: postgres
+    ports:
+      - "5432:5432" # Listen for connections on the host machine
+
+  web:
+    tty: true
+    build:
+      context: .
+      dockerfile: Docker/Django/Dockerfile
+    command: bash -c './start-local.sh'
+    env_file:
+      - .env
+    volumes:
+      - ./:/var/www/app
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
